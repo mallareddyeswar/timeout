@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "timeouttask"
+    }
+  },
+  "defaultProject": "timeouttask",
+  "cli": {
+    "analytics": "c28f3bfa-2eb4-487a-9a5d-1a6bfd029532"
+  }
 }

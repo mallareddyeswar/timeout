@@ -22,12 +22,11 @@ export class MainComponent implements OnInit {
     this.apiservice.getProfile().subscribe(res=>{
       console.log(res['data'])
       this.profile = res['data']
-      setTimeout(()=>{                          
-        this.showCard=false;
-        this.showError=true
-   }, 15000);
+  
       
-    })
+    }, err => {
+      console.log("test failed")
+    });
 
   }
 

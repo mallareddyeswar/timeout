@@ -10,23 +10,22 @@ import {ApiService} from './../service/api.service';
 })
 export class MainComponent implements OnInit {
   profile:any
-  showCard:boolean=true;
-  showError:boolean=false
-  constructor(private apiservice:ApiService) { }
+
+  textshowen = "Waiting for Response"
+  constructor(private apiservice:ApiService) {
+    this.apiservice.errorMsg.subscribe(res=>{
+      console.log(res)
+      this.textshowen = res
+      
+     })
+   }
 
   ngOnInit(): void {
     this.getProfileList()
   }
 
   getProfileList(){
-    this.apiservice.getProfile().subscribe(res=>{
-      console.log(res['data'])
-      this.profile = res['data']
-  
-      
-    }, err => {
-      console.log("test failed")
-    });
+   console.log(this.apiservice.getProfile())
 
   }
 

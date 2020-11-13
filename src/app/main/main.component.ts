@@ -14,7 +14,7 @@ export class MainComponent implements OnInit {
   textshowen = "Waiting for Response"
   constructor(private apiservice:ApiService) {
     this.apiservice.errorMsg.subscribe(res=>{
-      console.log(res)
+  
       this.textshowen = res
       
      })
@@ -25,7 +25,9 @@ export class MainComponent implements OnInit {
   }
 
   getProfileList(){
-   console.log(this.apiservice.getProfile())
+   this.apiservice.getProfile().subscribe(res=>{
+     console.log(res)
+   })
 
   }
 

@@ -9,15 +9,24 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
+  
   errorMsg = new Subject<any>();
+   myCors(req, res, nxt) {
+    res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Access-Control-Allow-Origin, Content-Type, Accept, Accept-Language, Origin, User-Agent');
+    if(req.method === 'OPTIONS') {
+        res.sendStatus(204);
+    }
+    else {
+        nxt();
+    }
+}
   constructor(private httpclient:HttpClient) { }
+  
   
   public getProfile(){
    
-     return this.httpclient.get(`https://reqres.in/api/users?page=1`).pipe(delay(16000), timeout(15000)).toPromise()
-      .then(res=>{
-        return res
-      }).catch(error=> this.errorMsg.next(error.message))
-    
+     return this.httpclient.get(`http://slowwly.robertomurray.co.uk/delay/16000/url/https://jsonplaceholder.typicode.com/todos/1` )
   }
 }

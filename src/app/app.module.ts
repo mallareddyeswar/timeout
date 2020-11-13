@@ -23,7 +23,9 @@ import {  DEFAULT_TIMEOUT, TimeoutInterceptor } from './timeout.interceptor';
     ToastrModule.forRoot(),
   ],
   providers: [
-    
+   
+  [ { provide: HTTP_INTERCEPTORS, useClass: 
+    TimeoutInterceptor, multi: true } ]
 ],
   bootstrap: [AppComponent]
 })

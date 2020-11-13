@@ -1,6 +1,6 @@
-import { Inject, Injectable, InjectionToken } from '@angular/core';
-import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
-import { Observable,TimeoutError } from 'rxjs';
+import {  Injectable, InjectionToken } from '@angular/core';
+import {  HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { catchError, timeout } from 'rxjs/operators';
 import {ApiService} from './service/api.service';
 

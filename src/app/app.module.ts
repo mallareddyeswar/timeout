@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
  
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import {  DEFAULT_TIMEOUT, TimeoutInterceptor } from './timeout.interceptor';
+import { TimeoutInterceptor } from './timeout.interceptor';
 
 @NgModule({
   declarations: [

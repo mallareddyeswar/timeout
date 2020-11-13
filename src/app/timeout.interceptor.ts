@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { catchError, timeout } from 'rxjs/operators';
 import {ApiService} from './service/api.service';
 
-export const DEFAULT_TIMEOUT = new InjectionToken<number>('defaultTimeout');
+
 
 @Injectable()
 export class TimeoutInterceptor implements HttpInterceptor {

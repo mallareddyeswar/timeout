@@ -26,6 +26,6 @@ export class ApiService {
   
   public getProfile(){
    
-     return this.httpclient.get(`http://slowwly.robertomurray.co.uk/delay/16000/url/https://jsonplaceholder.typicode.com/todos/1` )
+     return this.httpclient.get(`http://slowwly.robertomurray.co.uk/delay/16000/url/http://dummy.restapiexample.com/api/v1/employees` )
   }
 }
